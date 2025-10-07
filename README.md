@@ -1,43 +1,43 @@
-# Talksy
+# 💬 Talksy
 
-**Talksy** is a lightweight real-time chat web application built with **ASP.NET Core** and **Angular**. It provides a simple yet functional environment for users to create chats, exchange messages, and communicate instantly through SignalR.
+**Talksy** is a lightweight real-time chat web application built with **ASP.NET Core** and **Angular** ⚡
+Create chats, send messages instantly, and enjoy seamless communication powered by **SignalR** 🚀
 
 ---
 
-## 🚀 Features
+## ✨ Features
 
-* **User authentication** with JWT tokens
-* **Password hashing** using BCrypt
-* **Real-time messaging** powered by SignalR
-* **Chat creation** and private conversations between users
-* **Entity validation** with FluentValidation
-* **AutoMapper** for clean object mapping
-* **SQLite** as a lightweight database backend
+* 🔐 **JWT authentication** and **BCrypt password hashing**
+* ⚡ **Real-time messaging** with SignalR
+* 💭 **Private chats** between users
+* ✅ **FluentValidation** for data validation
+* 🔄 **AutoMapper** for clean data mapping
+* 🗄️ **SQLite** as a lightweight database backend
 
 ---
 
 ## 🧩 Tech Stack
 
-### Backend
+### 🖥️ Backend
 
-* **ASP.NET Core** (Web API)
-* **Entity Framework Core**
-* **SignalR**
-* **AutoMapper**
-* **FluentValidation**
-* **BCrypt**
-* **JWT Authentication**
-* **SQLite**
+* 🧱 **ASP.NET Core** (Web API)
+* 🗃️ **Entity Framework Core**
+* 🔔 **SignalR**
+* 🔄 **AutoMapper**
+* ✅ **FluentValidation**
+* 🔐 **BCrypt**
+* 🪪 **JWT Authentication**
+* 💾 **SQLite**
 
-### Frontend
+### 💻 Frontend
 
-* **Angular**
-* **RxJS**
-* **SignalR Client**
-* No external UI component libraries — fully custom layout
+* ⚙️ **Angular**
+* 🔁 **RxJS**
+* 🔔 **SignalR Client**
+* 🎨 No external UI libraries — fully custom layout
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+Licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
