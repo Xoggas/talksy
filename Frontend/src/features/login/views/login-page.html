@@ -1,0 +1,7 @@
+<div class="wrapper">
+  <app-sidebar/>
+  <main class="main">
+    <app-login-form (succeeded)="onSuccessfulLogin($event)"
+                    (failed)="onFailedLogin($event)"/>
+  </main>
+</div>

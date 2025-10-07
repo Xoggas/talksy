@@ -1,0 +1,9 @@
+<div class="wrapper">
+  <app-chat-list [userId]="userId()"
+                 (chatSelected)="onChatSelected($event)"
+                 [isActive]="mode() == Mode.users"/>
+  <app-chat-body [userId]="userId()"
+                 [chat]="selectedChat"
+                 [isActive]="mode() == Mode.chats"
+                 (backButtonPressed)="onBackButtonPressed()"/>
+</div>

@@ -1,0 +1,22 @@
+:host {
+  color: var(--clr-light-a0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  gap: 0.5em;
+  font-weight: bold;
+  background: linear-gradient(-25deg, var(--clr-surface-a20), var(--clr-surface-a10));
+  font-size: max(4vw, 8vh);
+}
+
+.logo .material-symbols-rounded {
+  font-size: 3em;
+}
+
+@media screen and (orientation: portrait) {
+  :host {
+    display: none;
+  }
+}

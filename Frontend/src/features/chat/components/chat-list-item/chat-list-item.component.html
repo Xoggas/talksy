@@ -1,0 +1,10 @@
+<div class="person-profile-picture">
+  {{ initials }}
+</div>
+<div class="chat-info">
+  <p class="person-name">{{ otherPersonName }}</p>
+
+  @if (lastMessage()) {
+    <p class="last-message">{{ lastMessage()?.content }}</p>
+  }
+</div>

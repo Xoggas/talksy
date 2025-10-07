@@ -1,0 +1,32 @@
+@if (chat()) {
+  <div class="header">
+    <span class="material-symbols-rounded thin back-button"
+          (click)="backButtonPressed.emit()">
+      arrow_back
+    </span>
+    <p>{{ otherPersonName }}</p>
+  </div>
+
+  <div class="messages">
+    @for (message of messages; track message.id) {
+      <app-message [userId]="userId()"
+                   [message]="message"/>
+    }
+  </div>
+
+  <div class="message-input">
+    <input class="message-input-field"
+           placeholder="Message"
+           [(ngModel)]="messageText"
+           (keyup)="onKeyUp($event)">
+
+    <button class="send-message-button thin"
+            [disabled]="messageText().trim().length == 0"
+            (click)="sendMessage()">
+      <span class="material-symbols-rounded">
+          send
+      </span>
+    </button>
+  </div>
+}
+

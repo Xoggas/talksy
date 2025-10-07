@@ -1,0 +1,36 @@
+@if (showError) {
+  <div class="error">
+    <span class="material-symbols-rounded thin">
+        error
+    </span>
+    <span>
+        {{ errorText }}
+    </span>
+  </div>
+}
+
+<form class="login-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <p class="title">Добро пожаловать в Talksy!</p>
+
+  <app-input-field formControlName="name"
+                   icon="account_circle"
+                   type="text"
+                   placeholder="Ваше имя"/>
+  @if (nameIsInvalid) {
+    <div class="validation-error">Имя может иметь только буквы, цифры и пробелы</div>
+  }
+
+  <app-input-field formControlName="username" icon="alternate_email" type="text" placeholder="Логин"/>
+  @if (usernameIsInvalid) {
+    <div class="validation-error">Логин может иметь только буквы латиницы, цифры и нижнее подчёркивание</div>
+  }
+
+  <app-input-field formControlName="password" icon="lock" type="password" placeholder="Пароль"/>
+  @if (passwordIsInvalid) {
+    <div class="validation-error">Пароль может иметь только буквы латиницы, цифры и нижнее подчёркивание</div>
+  }
+
+  <app-button text="Зарегистрироваться" [disabled]="registerForm.invalid"/>
+
+  <a class="register-page-navigation" routerLink="/login">Уже есть аккаунт?</a>
+</form>

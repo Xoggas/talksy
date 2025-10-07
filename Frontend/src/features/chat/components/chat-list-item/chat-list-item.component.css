@@ -1,0 +1,58 @@
+:host {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  gap: 1em;
+  cursor: pointer;
+}
+
+:host:nth-child(even) {
+  background-color: rgba(0, 0, 0, 15%);
+}
+
+:host:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 25%);
+}
+
+:host.active {
+  background-color: rgba(107, 175, 255, 15%);
+}
+
+.person-profile-picture {
+  text-transform: uppercase;
+  padding: 0.5em;
+  background: linear-gradient(45deg, var(--clr-primary-a20), var(--clr-primary-a40));
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 15%);
+}
+
+.chat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.person-name {
+  font-size: 1em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.last-message {
+  font-size: 0.75em;
+  opacity: 50%;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

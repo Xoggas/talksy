@@ -1,0 +1,7 @@
+<div class="wrapper">
+  <app-sidebar/>
+  <main class="main">
+    <app-register-form (succeeded)="onSuccessfulRegistration($event)"
+                       (failed)="onFailedRegistration($event)"/>
+  </main>
+</div>

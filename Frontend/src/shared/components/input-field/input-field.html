@@ -1,0 +1,7 @@
+<span class="material-symbols-rounded input-field-icon thin">
+  {{ icon }}
+</span>
+<input type="{{type}}"
+       placeholder="{{placeholder}}"
+       (input)="onChange($event.target.value)"
+       (blur)="onTouched()">

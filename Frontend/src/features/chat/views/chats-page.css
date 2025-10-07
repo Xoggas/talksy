@@ -1,0 +1,29 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--clr-surface-a30);
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: var(--clr-surface-a10-transparent);
+  backdrop-filter: blur(6px);
+  display: grid;
+  grid-template-columns: 25vw 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.main {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 1em;
+  padding: 0 10em;
+  align-items: center;
+}
+
+@media screen and (orientation: portrait) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+

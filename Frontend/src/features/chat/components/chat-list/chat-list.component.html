@@ -1,0 +1,37 @@
+<div class="search-bar">
+  <span class="material-symbols-rounded thin">
+      search
+  </span>
+  <input class="search-bar-input-field"
+         type="text"
+         placeholder="Поиск"
+         [(ngModel)]="searchString">
+</div>
+
+@if (searchString()) {
+  @if (foundUsers.length > 0) {
+    @for (user of foundUsers; track user.id) {
+      <app-user-list-item [user]="user"
+                          (click)="openOrCreateChat(user)"/>
+    }
+  }
+  @else {
+    <div class="empty-list-banner">
+      Пользователь не найден!
+    </div>
+  }
+}
+@else if (chats.length == 0) {
+  <div class="empty-list-banner">
+    Список чатов пуст!
+  </div>
+}
+@else {
+  @for (chat of chats; track chat.id) {
+    <app-chat-list-item [userId]="userId()"
+                        [chat]="chat"
+                        [lastMessage]="lastMessages.get(chat)"
+                        [isSelected]="selectedChat == chat"
+                        (click)="onChatSelected(chat)"/>
+  }
+}

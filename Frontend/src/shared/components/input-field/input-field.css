@@ -1,0 +1,30 @@
+:host {
+  width: 100%;
+  color: var(--clr-light-a0);
+  border: 1px solid var(--clr-surface-a30);
+  border-radius: 0.5em;
+  display: flex;
+  align-items: center;
+  padding-left: 0.75em;
+  gap: 0.5em;
+  transition: 150ms;
+}
+
+:host input {
+  width: 100%;
+  background-color: transparent;
+  padding: 1em 1em 1em 0;
+  color: inherit;
+}
+
+:host input::placeholder {
+  color: var(--clr-surface-a50);
+}
+
+.input-field-icon {
+  color: var(--clr-surface-a50);
+}
+
+:host.ng-invalid.ng-touched {
+  border: 1px solid var(--clr-red-a0);
+}
