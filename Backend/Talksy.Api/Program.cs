@@ -13,7 +13,6 @@ using Talksy.Api.Middlewares;
 using Talksy.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-var configuration = builder.Configuration;
 
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
@@ -34,7 +33,7 @@ builder.Services.AddSwaggerGen(options =>
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAngular", policy =>
+    options.AddPolicy("AllowFrontend", policy =>
     {
         policy.WithOrigins("http://localhost:4200")
             .AllowAnyHeader()
@@ -42,6 +41,9 @@ builder.Services.AddCors(options =>
             .AllowCredentials();
     });
 });
+
+var configuration = builder.Configuration;
+configuration.AddEnvironmentVariables();
 
 builder.Services.AddScoped<JwtTokenGenerator>();
 builder.Services.AddAuthentication(options =>
@@ -75,6 +77,12 @@ builder.Services.AddScoped<IChatService, ChatService>();
 
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.EnsureCreated();
+}
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -83,7 +91,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseCors("AllowAngular");
+app.UseCors("AllowFrontend");
 app.UseHttpsRedirection();
 
 app.UseMiddleware<ErrorHandlingMiddleware>();

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "lab-2": {
+    "talksy": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -53,10 +53,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "lab-2:build:production"
+              "buildTarget": "talksy:build:production"
             },
             "development": {
-              "buildTarget": "lab-2:build:development"
+              "buildTarget": "talksy:build:development"
             }
           },
           "defaultConfiguration": "development"

@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import * as signalR from '@microsoft/signalr';
-import {environment} from '../../../app/environment';
 import {MessageDto} from '../dto/message.dto';
 import {Subject} from 'rxjs';
 import {ChatDto} from '../dto/chat.dto';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'

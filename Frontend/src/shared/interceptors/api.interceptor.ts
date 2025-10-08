@@ -1,5 +1,5 @@
 import { HttpInterceptorFn } from '@angular/common/http';
-import {environment} from '../../app/environment';
+import {environment} from '../../environments/environment';
 
 export const apiInterceptor: HttpInterceptorFn = (req, next) => {
   if (req.url.startsWith('http')) {

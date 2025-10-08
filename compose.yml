@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  talksy.api:
+    build:
+      context: ./Backend
+      dockerfile: Talksy.Api/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    volumes:
+      - sqlite_data:/app/Data
+    ports:
+      - "5000:8080"
+    networks:
+      - talksy_network
+
+  talksy.frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    depends_on:
+      - talksy.api
+    networks:
+      - talksy_network
+
+volumes:
+  sqlite_data:
+
+networks:
+  talksy_network:

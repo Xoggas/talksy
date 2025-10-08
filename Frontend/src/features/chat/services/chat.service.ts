@@ -4,7 +4,6 @@ import {ChatDto} from '../dto/chat.dto';
 import {HttpClient} from '@angular/common/http';
 import {MessageDto} from '../dto/message.dto';
 import {MessageCreateDto} from '../dto/message-create.dto';
-import {UserDto} from '../../../shared/dto/user/user.dto';
 
 @Injectable({
   providedIn: 'root'

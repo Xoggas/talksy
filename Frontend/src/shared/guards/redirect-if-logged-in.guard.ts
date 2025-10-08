@@ -2,7 +2,9 @@ import {Injectable} from '@angular/core';
 import {CanActivate, Router} from '@angular/router';
 import {AuthService} from '../services/auth.service';
 
-@Injectable({providedIn: 'root'})
+@Injectable({
+  providedIn: 'root'
+})
 export class RedirectIfLoggedInGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {
   }
@@ -11,7 +13,8 @@ export class RedirectIfLoggedInGuard implements CanActivate {
     if (this.authService.isAuthorized()) {
       await this.router.navigate(['/chats']);
       return false;
-    } else {
+    }
+    else {
       return true;
     }
   }
