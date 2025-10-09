@@ -7,9 +7,11 @@ services:
       dockerfile: Talksy.Api/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
-      - Jwt__Key=
-    volumes:
-      - sqlite_data:/app/Data
+      - Jwt__Key=8afd107e4af683c0356305a4cd7c7498
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=talksy_db;Username=talksy_user;Password=talksy_password
+    depends_on:
+      postgres:
+        condition: service_healthy
     ports:
       - "5000:8080"
     networks:
@@ -26,8 +28,27 @@ services:
     networks:
       - talksy_network
 
+  postgres:
+    image: postgres:18
+    restart: always
+    environment:
+      - POSTGRES_USER=talksy_user
+      - POSTGRES_PASSWORD=talksy_password
+      - POSTGRES_DB=talksy_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U talksy_user -d talksy_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - talksy_network
+
 volumes:
-  sqlite_data:
+  postgres_data:
 
 networks:
   talksy_network:

@@ -149,7 +149,7 @@ public sealed class ChatService : IChatService
         var messageModel = new Message
         {
             Id = Guid.CreateVersion7(),
-            SentAt = DateTime.Now,
+            SentAt = DateTime.Now.ToUniversalTime(),
             Chat = chat,
             Sender = sender,
             Content = dto.Content
