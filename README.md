@@ -1,3 +1,9 @@
+⚠️ Disclaimer
+
+This repository contains private data such as API keys, tokens, or other credentials.
+It’s done intentionally, since this is a non-production / personal project created for learning and experimentation purposes.
+I’m fully aware that this is not acceptable in real-world projects, where all sensitive data must be kept secure and excluded from version control.
+
 # 💬 Talksy
 
 **Talksy** is a lightweight real-time chat web application built with **ASP.NET Core** and **Angular** ⚡
